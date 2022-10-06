@@ -1,5 +1,6 @@
 import 'dart:typed_data';
-
+import 'package:cansat_2023/Areas/Area1/Views/Shared/myTextWidget.dart';
+import 'package:cansat_2023/Areas/core/constant/myTexts.dart';
 import 'package:flutter/material.dart';
 import 'package:serial_port_win32/serial_port_win32.dart';
 
@@ -14,9 +15,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'Righteous',
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Column(
+        children: [
+          MyHomePage(title: 'Flutter Demo Home Page'),
+          const MyTextWidget(MyText.title, textStyle: MyTextStyle.minTitle)
+        ],
+      ),
     );
   }
 }
@@ -34,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var ports = <String>[];
   late SerialPort port;
 
-  final sendData = Uint8List.fromList([8,4,6]);
+  final sendData = Uint8List.fromList([8, 4, 6]);
 
   String data = '';
 
@@ -42,7 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ports = SerialPort.getAvailablePorts();
     print(ports);
     if (ports.isNotEmpty) {
-      port = SerialPort(ports[0], openNow: false, ReadIntervalTimeout: 1, ReadTotalTimeoutConstant: 2);
+      port = SerialPort(ports[0],
+          openNow: false, ReadIntervalTimeout: 1, ReadTotalTimeoutConstant: 2);
       port.open();
       print(port.isOpened);
       port.readBytesOnListen(9, (value) {
@@ -57,8 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // });
   }
 
-  void _send(){
-     print(sendData);
+  void _send() {
+    print(sendData);
     print(port.writeBytesFromUint8List(sendData));
   }
 

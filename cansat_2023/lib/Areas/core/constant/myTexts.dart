@@ -1,0 +1,30 @@
+class MyText {
+  static const String countryName = "Turkiye";
+  static const String title = "ETU TECHNOLOGY TEAM CanSat 2023 GEOUND STATION";
+  static const String teamID = "1003";
+  static const String missionTime = "Mission Time";
+  static const String home = "HOME";
+  static const String graph = "GRAPH";
+  static const String data = "DATA";
+  static const String map = "MAP";
+  static const String portSelected = "PORT SELECT";
+  static const String fileSelect = "CSV FİLE SELECT";
+  static const String commandPanel = "COMMAND PANEL";
+  static const String state = "STATE";
+  static const String mode = "MODE";
+  static const String flightMode = "FLIGHT";
+  static const String simEnable = "SIMULATION ENABLE";
+  static const String simActive = "SIMULATION ACTIVE";
+  static const String packetCount = "Packet Count";
+  static const String temperature = "Temperature";
+  static const String altitude = "Altitude";
+  static const String voltage = "Voltage";
+  static const String gps = "GPS";
+  static const String gpsTime = "GPS Time";
+  static const String longtitude = "Longtitude";
+  static const String latitude = "Latitude";
+  static const String sats = "Sats";
+  static const String gyro = "GYRO";
+  static const String bmp180 = "BMP180";
+  static const String pressure = "Pressure";
+}
