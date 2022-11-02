@@ -1,29 +1,32 @@
-class GpsData {
-  int? gpsAltitude;
-  int? gpsLatitude;
-  int? gpsLongitude;
-  int? gpsSats;
+class Gps {
   String? gpsTime;
-  GpsData(
+  String? gpsAltitude;
+  String? gpsLatitude;
+  String? gpsLongitude;
+  String? gpsSats;
+
+  Gps(
       {this.gpsTime,
       this.gpsAltitude,
       this.gpsLatitude,
       this.gpsLongitude,
       this.gpsSats});
-  GpsData.fromJson(Map<String, dynamic> json) {
-    gpsTime = json['GPS_TIME'];
-    gpsAltitude = json['GPS_ALTITUDE'];
-    gpsLatitude = json['GPS_LATITUDE'];
-    gpsLongitude = json['GPS_LONGITUDE'];
-    gpsSats = json['GPS_SATS'];
+
+  Gps.fromJson(Map<String, dynamic> json) {
+    gpsTime = json['GpsTime'];
+    gpsAltitude = json['GpsAltitude'];
+    gpsLatitude = json['GpsLatitude'];
+    gpsLongitude = json['GpsLongitude'];
+    gpsSats = json['GpsSats'];
   }
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['GPS_TIME'] = this.gpsTime;
-    data['GPS_ALTITUDE'] = this.gpsAltitude;
-    data['GPS_LATITUDE'] = this.gpsLatitude;
-    data['GPS_LONGITUDE'] = this.gpsLongitude;
-    data['GPS_SATS'] = this.gpsSats;
+    data['GpsTime'] = this.gpsTime;
+    data['GpsAltitude'] = this.gpsAltitude;
+    data['GpsLatitude'] = this.gpsLatitude;
+    data['GpsLongitude'] = this.gpsLongitude;
+    data['GpsSats'] = this.gpsSats;
     return data;
   }
 }
